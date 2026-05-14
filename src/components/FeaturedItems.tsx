@@ -8,9 +8,9 @@ const items = [
   { id: 1, name: "Ghee Podi Idly", category: "Breakfast", description: "Soft idlis coated with aromatic spice powder and pure ghee.", image: "/items/ghee-podi-idly.jpg" },
   { id: 2, name: "Signature Veg Meals", category: "Lunch", description: "Authentic South Indian feast with a variety of traditional curries.", image: "/items/veg-meals.jpg" },
   { id: 3, name: "Veg Biryani", category: "Lunch", description: "Fragrant basmati rice cooked with garden-fresh vegetables.", image: "/items/veg-briyaani.jpg" },
-  { id: 4, name: "Mushroom Pepper Fry", category: "Starters", description: "Crispy sautéed mushrooms tossed with black pepper.", image: "/items/idly.jpg" },
-  { id: 5, name: "Ghee Onion Rava Roast", category: "Special Dosa", description: "Crispy semolina crepe loaded with onions and pure ghee.", image: "/items/ghee-podi-idly.jpg" },
-  { id: 6, name: "Special Mysore Pak", category: "Sweets", description: "Melt-in-the-mouth traditional sweet crafted with pure ghee.", image: "/items/veg-meals.jpg" }
+  { id: 4, name: "Mushroom Pepper Fry", category: "Starters", description: "Crispy sautéed mushrooms tossed with black pepper.", image: "/items/mushroom-fry.jpg" },
+  { id: 5, name: "Ghee Onion Rava Roast", category: "Special Dosa", description: "Crispy semolina crepe loaded with onions and pure ghee.", image: "/items/placeholder.jpg" },
+  { id: 6, name: "Special Mysore Pak", category: "Sweets", description: "Melt-in-the-mouth traditional sweet crafted with pure ghee.", image: "/items/placeholder.jpg" }
 ];
 
 // Doubling items for infinite loop illusion
@@ -98,6 +98,10 @@ export default function FeaturedItems() {
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
+          </div>
+
+          <div className="featured-cta">
+            <a href="/menu" className="btn-v6-primary">View Full Menu</a>
           </div>
         </div>
       </div>
