@@ -31,8 +31,8 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   const toggleMenu = (e: any) => {
-    e.stopPropagation();
-    setIsMenuOpen(!isMenuOpen);
+    if (e && e.preventDefault) e.preventDefault();
+    setIsMenuOpen(prev => !prev);
   };
 
   return (
@@ -67,7 +67,6 @@ export default function Navbar() {
       <div 
         className={`mobile-toggle-v5 ${isMenuOpen ? "active" : ""}`} 
         onClick={toggleMenu}
-        onTouchEnd={toggleMenu}
       >
         <span className="toggle-text">{isMenuOpen ? "CLOSE" : "MENU"}</span>
         <div className="hamburger">
