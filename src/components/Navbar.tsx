@@ -13,7 +13,7 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    
+
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
@@ -40,11 +40,11 @@ export default function Navbar() {
       <nav className={`navbar ${isScrolled ? "scrolled" : ""} ${isMenuOpen ? "menu-open" : ""}`}>
         <div className="container nav-content">
           <Link href="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-            <Image 
-              src={(isScrolled || isMenuOpen) ? "/logo_color.png" : "/logo_white.png"} 
-              alt="Karur Annapoorna" 
-              width={120} 
-              height={35} 
+            <Image
+              src={(isScrolled || isMenuOpen) ? "/logo_color.png" : "/logo_white.png"}
+              alt="Karur Annapoorna"
+              width={120}
+              height={40}
               className="logo-img"
               priority
             />
@@ -52,7 +52,7 @@ export default function Navbar() {
 
           {/* This spacer ensures the logo doesn't overlap the button area */}
           <div className="nav-spacer" style={{ flex: 1 }}></div>
-          
+
           <div className="nav-links-desktop">
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
@@ -64,8 +64,8 @@ export default function Navbar() {
       </nav>
 
       {/* Independent Mobile Toggle for maximum reliability */}
-      <div 
-        className={`mobile-toggle-v5 ${isMenuOpen ? "active" : ""}`} 
+      <div
+        className={`mobile-toggle-v5 ${isMenuOpen ? "active" : ""}`}
         onClick={toggleMenu}
       >
         <span className="toggle-text">{isMenuOpen ? "CLOSE" : "MENU"}</span>
