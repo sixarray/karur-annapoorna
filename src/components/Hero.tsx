@@ -22,7 +22,7 @@ export default function Hero() {
           and modern culinary excellence. From our kitchen to your heart.
         </p>
         <div className="hero-btns fade-up" style={{ animationDelay: '0.4s' }}>
-          <a href="#featured" className="btn btn-primary">Our Specialties</a>
+          <a href="/#featured" className="btn btn-primary">Our Specialties</a>
         </div>
       </div>
 

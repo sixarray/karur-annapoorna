@@ -54,9 +54,9 @@ export default function Navbar() {
           <div className="nav-spacer" style={{ flex: 1 }}></div>
           
           <div className="nav-links-desktop">
-            <Link href="/#home">Home</Link>
+            <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="/menu">Full Menu</Link>
+            <Link href="/menu">Our Menu</Link>
             <Link href="/#featured">Our Specialties</Link>
             <Link href="/#contact">Contact</Link>
           </div>
@@ -79,7 +79,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? "active" : ""}`}>
         <div className="mobile-menu-links">
-          <Link href="/#home" onClick={() => setIsMenuOpen(false)}>Home</Link>
+          <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link href="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link>
           <Link href="/menu" onClick={() => setIsMenuOpen(false)}>Full Menu</Link>
           <Link href="/#featured" onClick={() => setIsMenuOpen(false)}>Our Specialties</Link>
