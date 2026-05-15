@@ -19,6 +19,7 @@ const infiniteItems = [...items, ...items];
 export default function FeaturedItems() {
   const [index, setIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -35,9 +36,10 @@ export default function FeaturedItems() {
   }, []);
 
   useEffect(() => {
+    if (isPaused) return;
     const interval = setInterval(nextStep, 4000);
     return () => clearInterval(interval);
-  }, [nextStep]);
+  }, [nextStep, isPaused]);
 
   const onDragEnd = (event: any, info: any) => {
     const shift = info.offset.x;
@@ -60,7 +62,14 @@ export default function FeaturedItems() {
         </div>
 
         <div className="framer-carousel-wrapper">
-          <div className="carousel-overflow" ref={containerRef}>
+          <div 
+            className="carousel-overflow" 
+            ref={containerRef}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+          >
             <motion.div
               className="framer-items-track"
               drag="x"
